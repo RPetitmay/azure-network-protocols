@@ -17,7 +17,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 - Various Command-Line Tools
 - Various Network Protocols (SSH, RDH, DNS, HTTP/S, ICMP)
 - Wireshark (Protocol Analyzer)
-
+- Notepad/Notes App (Needed for saving usernames and passwords)
 
 <h2>Operating Systems Used </h2>
 
