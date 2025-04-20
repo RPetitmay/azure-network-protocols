@@ -18,6 +18,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 - Various Network Protocols (SSH, RDH, DNS, HTTP/S, ICMP)
 - Wireshark (Protocol Analyzer)
 
+
 <h2>Operating Systems Used </h2>
 
 - Windows 10 (21H2)
@@ -36,7 +37,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+So fo rthis section, login to both the client vm and DC vm with admin account: mydomain.com\jane_admin. Within the client vm attempt to ping a random name: "mainframe" and observe it fail to ping. To do so from the start menu search for Windows Powershell, open the application. Once the application is opened type ping mainframe.After that type  This is to demontrate the understanding of DNS and how your computer goes about interacting with a hostname over a network. Three things your computer when it is pinging is check Local DNS Cache, then if it is not found it will check the Local Host File and then if nothing is found over there it check the DNS Server.   
 </p>
 <br />
 
