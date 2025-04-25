@@ -37,7 +37,8 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-So fo rthis section, login to both the client vm and DC vm with admin account: mydomain.com\jane_admin. Within the client vm attempt to ping a random name: "mainframe" and observe it fail to ping. To do so from the start menu search for Windows Powershell, open the application. Once the application is opened type ping mainframe.After that type  This is to demontrate the understanding of DNS and how your computer goes about interacting with a hostname over a network. Three things your computer when it is pinging is check Local DNS Cache, then if it is not found it will check the Local Host File and then if nothing is found over there it check the DNS Server.   
+So for this section, login to both the client vm and DC vm with admin account: mydomain.com\jane_admin. Within the client vm attempt to ping a random name: "mainframe" and observe it to fail to ping. To do so from the start menu search for Windows Powershell, open the application. Once the application is opened type "ping mainframe" . This is to demontrate the understanding of DNS and how your computer goes about interacting with a hostname over a network. Three things your computer does when it is pinging a name or hostname is check Local DNS Cache. To see the local dns cache type "ipconfig /display dns".Then if it is not found it will check the Local Host File and then if nothing is found over there it check the DNS Server.  Now type "nslookup mainframe" and observe it fail again. Now we are going to make mainframe pingable. To do so we will create a DNS A-record on DC for “mainframe” and have it point to DC's Private IP address. Go to dc vm and go to the start menu and search DNS and open appilcation. On the left panel click on dc-1. Now 
+
 </p>
 <br />
 
