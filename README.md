@@ -20,12 +20,15 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 - Windows 10 (21H2)
 - Ubuntu Server 20.04
 
-<h2>High-Level Steps</h2>
+<h2>List of Prerequisites</h2>
 
-- Step 1
-- Step 2
-- Step 3
-- Step 4
+- Basic/General Understanding of Microsoft Azure
+- Azure Subscription/Azure Account(Portal) created
+- Resource Group created within your Azure portal
+- Windows 10 Virtual Machine(Azure) created within your Azure portal with the Resource Group you've created previously
+- <a href= "https://remote-desktop-connection.en.softonic.com/">Remote Desktop Connection(Windows)</a> application or <a href="https://apps.apple.com/us/app/windows-app/id1295203466?mt=12">Windows App(MacOS)</a> application installed onto your PC.
+- <a href="https://drive.google.com/uc?export=download&id=1b3RBkXTLNGXbibeMuAynkfzdBC1NnqaD">osTicket Installation Zip File</a> installed onto PC (needed later for extraction of files)
+
 
 <h2>Actions and Observations</h2>
 <p>
