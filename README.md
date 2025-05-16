@@ -26,14 +26,14 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 - Azure Subscription/Azure Account(Portal) created
 - Resource Group created within your Azure portal
 - Windows 10 Virtual Machine(Windows) created within your Azure portal with the resource group you've created previously
-- Linux Virtual Machine(Ubuntu) created within your Azure portal within the resource group <strong>*When creating the linux VM(Ubuntu),under the Networking tab,  make sure to select the same Virtual Network as the one you used for the Windows VM(windows-vm-vnet). If it doesn't appear as an option to be selected, refresh page *</strong>
+- Linux Virtual Machine(Ubuntu) created within your Azure portal within the resource group <strong>*When creating the linux VM(Ubuntu),under the Networking tab,  make sure to select the same Virtual Network as the one you used for the Windows VM(windows-vm-vnet). If it doesn't appear as an option to be selected, refresh page*</strong>
 
 <h2>Actions and Observations</h2>
 <p>
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Logon on to windows vm. Install <a href="https://www.wireshark.org/">Wireshark</a> within windows vm by copy and pasting the url into the windows vm. After installation, open up wireshark. After that click/highlight Ethernet and then on the top left corner of the application, click on the blue shark fin icon to start packet capturing on wireshark. Afterwards, on the search bar filter for the letters icmp. As expected nothing is shown.
+Logon to windows vm. Install <a href="https://www.wireshark.org/">Wireshark</a> within windows vm by copy and pasting the url into the windows vm. After installation, open up wireshark. After that click/highlight Ethernet and then on the top left corner of the application, click on the blue shark fin icon to start packet capturing on wireshark. Afterwards, on the search bar filter for the letters icmp. As expected nothing is shown.
 </p>
 <br />
 
