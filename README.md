@@ -62,10 +62,39 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/vhOaoMk.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+  <h3>Configuring a Firewall Network Security Group</h3>
+<ol>
+  <li>Open <strong>PowerShell</strong> on your Windows VM if it is not already open.</li>
+  <li>
+    Execute a continuous ping to the Linux VM's private IP address by entering the following command:
+    <br><code>ping &lt;linux-vm-private-ip&gt; -t</code>
+  </li>
+  <li>In the <strong>Azure portal</strong>, navigate to the <strong>Virtual Machines</strong> section and select your <strong>Linux VM</strong>.</li>
+  <li>Click on the <strong>Networking</strong> tab, then select <strong>Network settings</strong>.</li>
+  <li>Locate the <strong>Network Security Group (NSG)</strong> associated with the Linux VM (e.g., <em>linux-vm-nsg</em>) and click on it.</li>
+  <li>Within the NSG settings, click on the <strong>Inbound security rules</strong> tab, then click <strong>Add</strong> to create a new rule.</li>
+  <li>
+    Configure the new inbound rule with the following values:
+    <ol>
+      <li><strong>Source</strong>: Any</li>
+      <li><strong>Source port ranges</strong>: *</li>
+      <li><strong>Destination</strong>: Any</li>
+      <li><strong>Service</strong>: Custom</li>
+      <li><strong>Destination port ranges</strong>: *</li>
+      <li><strong>Protocol</strong>: ICMPv4</li>
+      <li><strong>Action</strong>: Deny</li>
+      <li><strong>Priority</strong>: 290</li>
+    </ol>
+  </li>
+  <li>Click <strong>Add</strong> to apply the rule.</li>
+  <li>Return to <strong>PowerShell</strong> on the Windows VM and observe that the ping requests now time out, indicating that ICMP traffic is being blocked.</li>
+  <li>Go back to the <strong>Azure portal</strong>, navigate to the NSG's <strong>Inbound security rules</strong>, and delete the rule you just created.</li>
+  <li>After the rule has been removed, return to <strong>PowerShell</strong> and observe that ICMP traffic has resumed and ping replies are being received.</li>
+  <li>Press <strong>Ctrl + C</strong> in PowerShell to stop the continuous ping and end the Wireshark capture.</li>
+</ol>
 </p>
 <br />
 
