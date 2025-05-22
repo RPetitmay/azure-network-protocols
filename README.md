@@ -30,10 +30,10 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 <h2>Actions and Observations</h2>
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/y9bwKCU.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Logon to windows vm. Install <a href="https://www.wireshark.org/">Wireshark</a> within windows vm by copy and pasting the url into the windows vm. After installation, open up wireshark. After that click/highlight Ethernet and then on the top left corner of the application, click on the blue shark fin icon to start packet capturing on wireshark. Afterwards, on the search bar filter for the letters icmp. As expected nothing is shown.
+Logon to windows vm. Install <a href="https://www.wireshark.org/">Wireshark</a> within windows vm by copy and pasting the url into the windows vm. After installation, open up wireshark. After that click/highlight Ethernet and then on the top left corner of the application, click on the blue shark fin icon to start packet capturing on wireshark. Afterwards, on the search bar filter for only icmp. As expected nothing is shown. After that login to the linux vm, 
 </p>
 <br />
 
