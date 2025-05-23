@@ -99,10 +99,31 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/z5xTf4i.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+<h3>Capturing SSH Traffic from Windows VM to Linux VM using Wireshark</h3>
+  <ol>
+  <li>Log back into the <strong>Windows VM</strong> if you are not already signed in.</li>
+  <li>Open the <strong>Wireshark</strong> application by searching for it from the <strong>Start Menu</strong>.</li>
+  <li>Select the <strong>Ethernet</strong> interface by clicking or highlighting it, then start a packet capture by clicking the <strong>blue shark fin icon</strong> in the upper-left corner.</li>
+  <li>In the display filter bar, type <code>ssh</code> and press <strong>Enter</strong> to filter for SSH traffic.</li>
+  <li>Open <strong>PowerShell</strong> within the Windows VM.</li>
+  <li>Locate the <strong>private IP address</strong> of your Linux VM by navigating to its <strong>Overview</strong> page in the <strong>Azure portal</strong>.</li>
+  <li>
+    In PowerShell, initiate an SSH connection by entering the following command:
+    <br><code>ssh &lt;vm-username&gt;@&lt;private-ip-address&gt;</code>
+    <br>Replace <code>&lt;vm-username&gt;</code> with your Linux VM's username and <code>&lt;private-ip-address&gt;</code> with the actual private IP.
+  </li>
+  <li>When prompted to continue connecting, type <code>yes</code> and press <strong>Enter</strong>.</li>
+  <li>If you are not immediately prompted to enter a password, repeat the SSH command.</li>
+  <li>When entering your password, note that no characters will appear—this is normal. After typing the password, press <strong>Enter</strong>.</li>
+  <li>Once connected, you will have terminal access to the Linux VM from within the Windows VM.</li>
+  <li>To verify the connection, type <code>id</code> to display the current user.</li>
+  <li>Type <code>hostname</code> to display the Linux VM’s hostname.</li>
+  <li>Optionally, type random characters or run commands to observe SSH traffic in Wireshark.</li>
+  <li>When finished, type <code>exit</code> in PowerShell to terminate the SSH session.</li>
+</ol>
 </p>
 <br />
 
