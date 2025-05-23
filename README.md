@@ -127,12 +127,44 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 </p>
 <br />
 
-
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/YZPqtfG.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+  <h3>Capturing DHCP Traffic on a Windows VM Using Wireshark and a Batch Script</h3>
+<ol>
+  <li>Log back into the <strong>Windows VM</strong>.</li>
+  <li>Open <strong>Wireshark</strong> by searching for it in the <strong>Start Menu</strong>, then right-click and select <strong>Run as administrator</strong>.</li>
+  <li>Start a packet capture by selecting the <strong>Ethernet</strong> interface and clicking the <strong>blue shark fin icon</strong>.</li>
+  <li>In the Wireshark display filter bar, type <code>dhcp</code> and press <strong>Enter</strong> to filter the capture for DHCP traffic.</li>
+  <li>Open the <strong>Notepad</strong> application by searching for it in the <strong>Start Menu</strong>.</li>
+  <li>In Notepad, type the following two commands, each on a separate line:
+    <ol>
+      <li><code>ipconfig /release</code></li>
+      <li><code>ipconfig /renew</code></li>
+    </ol>
+  </li>
+  <li>Save the file as a batch script:
+    <ol>
+      <li>Click <strong>File</strong> &gt; <strong>Save As</strong>.</li>
+      <li>In the <strong>File name</strong> field, enter a name ending in <code>.bat</code> (e.g., <code>dhcp.bat</code>).</li>
+      <li>In the <strong>Save as type</strong> dropdown, select <strong>All Files</strong>.</li>
+      <li>In the File Explorer address bar, enter <code>c:\ProgramData</code> to navigate to the ProgramData directory.</li>
+      <li>Click <strong>Save</strong>.</li>
+    </ol>
+  </li>
+  <li>Open <strong>PowerShell as Administrator</strong>.</li>
+  <li>Navigate to the ProgramData folder by typing:
+    <br><code>cd c:\ProgramData</code>
+  </li>
+  <li>Type <code>ls</code> and press <strong>Enter</strong> to verify the batch file is in the folder.</li>
+  <li>Run the batch file by typing:
+    <br><code>.\&lt;filename&gt;.bat</code>
+    <br>Replace <code>&lt;filename&gt;</code> with the name of your file (e.g., <code>.\dhcp.bat</code>).
+  </li>
+  <li>Wait for the commands to complete. This may disconnect and reconnect your network and possibly sign you out of the VM.</li>
+  <li>After signing back in, return to <strong>Wireshark</strong> and observe the captured <strong>DHCP traffic</strong> in the filtered view.</li>
+</ol>
 </p>
 <br />
 
