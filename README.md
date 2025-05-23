@@ -11,7 +11,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 - Microsoft Azure (Virtual Machines/Compute)
 - Remote Desktop (RDC/Windows App)
 - Various Command-Line Tools
-- Various Network Protocols (SSH, RDH, DNS, HTTP/S, ICMP)
+- Various Network Protocols (SSH, RDP, DNS, HTTP/S, ICMP)
 - <a href="https://www.wireshark.org/">Wireshark</a> (Protocol Analyzer)
 - Notepad/Notes App (Needed for saving usernames and passwords)
 
@@ -169,18 +169,38 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/yubXcUi.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+  <h3>Capturing DNS Traffic Using Wireshark on a Windows VM</h3>
+  <ol>
+  <li>Log in to the <strong>Windows virtual machine (VM)</strong>.</li>
+  <li>Open the <strong>Wireshark</strong> application by searching for it in the <strong>Start Menu</strong>.</li>
+  <li>Begin a packet capture by selecting the <strong>Ethernet</strong> interface and clicking the <strong>blue shark fin icon</strong> in the upper-left corner.</li>
+  <li>In the Wireshark display filter bar, type <code>dns</code> and press <strong>Enter</strong> to filter the capture for DNS traffic.</li>
+  <li>Open <strong>PowerShell</strong> as an administrator.</li>
+  <li>In the PowerShell window, type the following command and press <strong>Enter</strong>:
+    <br><code>nslookup disney.com</code>
+  </li>
+  <li>After executing the command, observe that DNS query and response packets appear in Wireshark for <code>disney.com</code>.</li>
+  <li>PowerShell will display the IP address associated with <code>disney.com</code>.</li>
+</ol>
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/OzvWH9a.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+  <h3>Monitoring RDP Traffic Using Wireshark on a Windows VM</h3>
+<ol>
+  <li>Log in to the <strong>Windows virtual machine (VM)</strong>.</li>
+  <li>Search for <strong>Wireshark</strong> in the <strong>Start Menu</strong> and open the application.</li>
+  <li>Select the <strong>Ethernet</strong> interface by clicking or highlighting it, then start a packet capture by clicking the <strong>blue shark fin icon</strong> in the upper-left corner.</li>
+  <li>In the Wireshark display filter bar, type <code>tcp.port == 3389</code> and press <strong>Enter</strong>.</li>
+  <li>This filter displays traffic associated with the <strong>Remote Desktop Protocol (RDP)</strong>, which uses TCP port 3389.</li>
+  <li>Observe the captured packets. You should see a continuous stream of RDP traffic, indicating an active or idle remote desktop session.</li>
+</ol>
 </p>
 <br />
 
